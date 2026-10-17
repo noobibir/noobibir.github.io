@@ -57,6 +57,21 @@
                     <td>called before rendering minecraft vanilla hud</td>
                     <td>none</td>
                 </tr>
+                <tr>
+                    <td>on_key</td>
+                    <td>called on key press/release</td>
+                    <td>key (int) action (int, 1 = press, 0 = release)</td>
+                </tr>
+                <tr>
+                    <td>on_attack</td>
+                    <td>called before an entity is attacked by the player</td>
+                    <td>targetID</td>
+                </tr>
+                <tr>
+                    <td>on_kill</td>
+                    <td>called when an entity was killed by the player</td>
+                    <td>targetID</td>
+                </tr>
             </table>
         </div>
         <div id="player">
@@ -226,7 +241,7 @@
     </div>
 
     <div class="navigation">
-        <h2>navigation</h3>
+        <h2>navigation</h2>
         <div class="dropdown">
             <a  href="#introduction">introduction</a>
             <a href="#creating-a-script">creating a script</a>
