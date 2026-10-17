@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bibir nextgen script api documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="doc">
+        <div id="introduction">
+            <h1>Introduction</h1>
+            <p>Bibir script api allows you to add new modules or add new features to some already existing ones</p>
+            <p>Scripts are written in lua programming language</p>
+            <p>All script files should be in &ltMC folder&gt/bibir/scripts</p>
+        </div>
+        <div id="creating-a-script">
+            <h1>Creating a script</h1>
+            <p>To create a script, make a new .lua file in &ltMC folder&gt/bibir/scripts</p>
+            <p>Open this file in your text editor and create a new local variable (will be called "module variable" below). This variable will contain all event listeners</p>
+            <div class="code" id="creating-a-script-example-1"></div>
+            <p>To add this module, you need to register it in module manager</p>
+            <div class="code" id="creating-a-script-example-2"></div>
+            <p>"script" here is the name of the module</p>
+        </div>
+        <div id="events">
+            <h1>Events</h1>
+            <p>To add an event listener, create a new function in the module variable</p>
+            <p>example script that prints "bivir" to chat when enabled:</p>
+            <div class="code" id="events-example-1"></div>
+            <p>example script that listens to key presses:</p>
+            <div class="code" id="events-example-2"></div>
+            <p>table of all events:</p>
+            <table>
+                <tr>
+                    <th>event name</th>
+                    <th>event description</th>
+                    <th>arguments</th>
+                </tr>
+                <tr>
+                    <td>on_enable</td>
+                    <td>called when the module is enabled</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>on_disable</td>
+                    <td>called when the module is disabled</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>on_tick</td>
+                    <td>called before mc.tick()</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>on_render</td>
+                    <td>called before rendering minecraft vanilla hud</td>
+                    <td>none</td>
+                </tr>
+            </table>
+        </div>
+        <div id="player">
+            <h1>Player</h1>
+            <table>
+                <tr>
+                    <th>function name</th>
+                    <th>description</th>
+                    <th>arguments</th>
+                    <th>return type</th>
+                </tr>
+                <tr>
+                    <td>player.jump()</td>
+                    <td>make the player jump (doesn't check for ground)</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.get_motion()</td>
+                    <td>get the player's motion</td>
+                    <td>none</td>
+                    <td>x, y, z (doubles)</td>
+                </tr>
+                <tr>
+                    <td>player.set_motion()</td>
+                    <td>set the player's motion</td>
+                    <td>x, y, z (doubles)</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.message()</td>
+                    <td>send message to chat (supports sending minecraft and client commands)</td>
+                    <td>text (string)</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.left_click()</td>
+                    <td>press left click once</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.right_click()</td>
+                    <td>press right click once</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.get_position()</td>
+                    <td>get player's position</td>
+                    <td>none</td>
+                    <td>x, y, z (doubles)</td>
+                </tr>
+                <tr>
+                    <td>player.get_prev_position()</td>
+                    <td>get player's previous position</td>
+                    <td>none</td>
+                    <td>x, y, z (doubles)</td>
+                </tr>
+                <tr>
+                    <td>player.set_position()</td>
+                    <td>set player's position</td>
+                    <td>x, y, z (doubles)</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>player.attack()</td>
+                    <td>attack an entity (doesn't check for raycast)</td>
+                    <td>entityID (int)</td>
+                    <td>none</td>
+                </tr>
+            </table>
+        </div>
+        <div id="world">
+            <h1>world</h1>
+            <table>
+                <tr>
+                    <th>function name</th>
+                    <th>description</th>
+                    <th>arguments</th>
+                    <th>return type</th>
+                </tr>
+                <tr>
+                    <td>world.set_timer()</td>
+                    <td>set minecraft timer speed</td>
+                    <td>timer_speed (double)</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>world.get_timer()</td>
+                    <td>get minecraft timer speed</td>
+                    <td>none</td>
+                    <td>timer_speed (double)</td>
+                </tr>
+                <tr>
+                    <td>world.entities()</td>
+                    <td>get all entities in world</td>
+                    <td>none</td>
+                    <td>table of id:entityID</td>
+                </tr>
+                <tr>
+                    <td>world.get_name()</td>
+                    <td>get entity name by id</td>
+                    <td>entityID (int)</td>
+                    <td>entity_name (string)</td>
+                </tr>
+                <tr>
+                    <td>world.get_display_name()</td>
+                    <td>get entity display name by id</td>
+                    <td>entityID (int)</td>
+                    <td>entity_display_name (string)</td>
+                </tr>
+                <tr>
+                    <td>world.is_player()</td>
+                    <td>check is entity player by id</td>
+                    <td>entityID (int)</td>
+                    <td>is_player (bool)</td>
+                </tr>
+                <tr>
+                    <td>world.get_position()</td>
+                    <td>get entity position by id</td>
+                    <td>entityID (int)</td>
+                    <td>x, y, z (doubles)</td>
+                </tr>
+            </table>
+        </div>
+        <div id="module-manager">
+            <h1>module manager</h1>
+            <table>
+                <tr>
+                    <th>function name</th>
+                    <th>description</th>
+                    <th>arguments</th>
+                    <th>return type</th>
+                </tr>
+                <tr>
+                    <td>register</td>
+                    <td>register a module</td>
+                    <td>module_name (string), module</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>is_enabled</td>
+                    <td>is module enabled</td>
+                    <td>module_name (string)</td>
+                    <td>is_enabled (bool)</td>
+                </tr>
+            </table>
+        </div>
+        <div id="client">
+            <h1>client</h1>
+            <table>
+                <tr>
+                    <th>function name</th>
+                    <th>description</th>
+                    <th>arguments</th>
+                    <th>return type</th>
+                </tr>
+                <tr>
+                    <td>client.print()</td>
+                    <td>send client message</td>
+                    <td>message (string)</td>
+                    <td>none</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <h2>navigation</h3>
+        <div class="dropdown">
+            <a  href="#introduction">introduction</a>
+            <a href="#creating-a-script">creating a script</a>
+            <a href="#events">events</a>
+            <a href="#player">player</a>
+            <a href="#world">world</a>
+            <a href="#module-manager">module manager</a>
+            <a href="#client">client</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

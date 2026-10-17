@@ -1,0 +1,109 @@
+.code {
+    border: 1px solid black;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.code-left {
+    display: block;
+    width: fit-content;
+    padding: 3px;
+}
+
+.code-right {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}
+
+.code-line {
+    display:flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.button-copy {
+    margin: 1px;
+    padding: 0px;
+}
+
+code {
+    margin: 0px;
+    padding: 0px;
+}
+
+code.kw {
+    color: blue;
+}
+
+code.df {
+    color: black;
+}
+
+code.lt {
+    color: purple;
+}
+
+code.lb {
+    color: green
+}
+
+code.fn {
+    color: rgb(0, 255, 0);
+}
+
+code.vr {
+    color: orange;
+}
+
+code.op {
+    color: rgb(61, 161, 255);
+}
+
+body {
+    margin: 2px;
+    display: flex;
+}
+
+h1 {
+    margin: 0px;
+    margin-bottom: 2px;
+    font-family: sans-serif;;
+}
+
+p {
+    margin: 1px;
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: 15px;;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navigation {
+    margin-right: 10px;
+    margin-left: auto;
+    float: right;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
