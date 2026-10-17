@@ -58,7 +58,7 @@ code.fn {
 }
 
 code.vr {
-    color: orange;
+    color: rgb(190, 92, 0);
 }
 
 code.op {
@@ -68,6 +68,7 @@ code.op {
 body {
     margin: 2px;
     display: flex;
+    scroll-behavior: smooth;
 }
 
 h1 {
