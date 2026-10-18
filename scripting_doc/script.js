@@ -154,12 +154,20 @@ local simpleFly = {
 module_manager.register("simpleFly", simpleFly)`);
 autoGenerateCodeStyle(document.getElementById("world-example-1"),
 `local m = {
-	on_enable = function ()
-		world.set_timer(3)
-	end,
-	on_disable = function ()
-		world.set_timer(1)
-	end
+  on_enable = function ()
+    world.set_timer(3)
+  end,
+  on_disable = function ()
+    world.set_timer(1)
+  end
 }
 
 module_manager.register("timer3", m)`);
+autoGenerateCodeStyle(document.getElementById("rendering-example-1"),
+`local m = {
+  on_render = function ()
+    local font = rendering.get_font("productSansMedium")
+    rendering.text(font, "bivir", 10, 10, 0.5, 0xFFFFFFFF)
+  end
+}
+module_manager.register("bivirText", m)`);

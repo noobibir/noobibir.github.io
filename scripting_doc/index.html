@@ -17,7 +17,7 @@
         </div>
         <div id="creating-a-script">
             <h1>Creating a script</h1>
-            <p>To create a script, make a new .lua file in &ltMC folder&gt/bibir/scripts</p>
+            <p>To create a script, make a new .lua file in &ltMC folder&gt/bibir/scripts. You can open this folder using .scripts dir command</p>
             <p>Open this file in your text editor and create a new local variable (will be called "module variable" below). This variable will contain all event listeners</p>
             <div class="code" id="creating-a-script-example-1"></div>
             <p>To add this module, you need to register it in module manager</p>
@@ -88,7 +88,7 @@
                     <td>player.jump()</td>
                     <td>make the player jump (doesn't check for ground)</td>
                     <td>none</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.get_motion()</td>
@@ -100,25 +100,25 @@
                     <td>player.set_motion()</td>
                     <td>set the player's motion</td>
                     <td>x, y, z (doubles)</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.message()</td>
                     <td>send message to chat (supports sending minecraft and client commands)</td>
                     <td>text (string)</td>
-                    <td>none</td>
+                    <td>NILL</td>
                 </tr>
                 <tr>
                     <td>player.left_click()</td>
                     <td>press left click once</td>
                     <td>none</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.right_click()</td>
                     <td>press right click once</td>
                     <td>none</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.get_position()</td>
@@ -136,20 +136,38 @@
                     <td>player.set_position()</td>
                     <td>set player's position</td>
                     <td>x, y, z (doubles)</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.attack()</td>
                     <td>attack an entity (doesn't check for raycast)</td>
                     <td>entityID (int)</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td>player.set_selected_slot()</td>
+                    <td>set selected slot (silent); -1 = unset</td>
+                    <td>slot (int)</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td>player.get_selected_slot()</td>
+                    <td>get selected slot (not silent)</td>
                     <td>none</td>
+                    <td>slot (int)</td>
+                </tr>
+                <tr>
+                    <td>player.get_slot()</td>
+                    <td>get item in selected slot (returns NIL if empty)</td>
+                    <td>none</td>
+                    <td>item or NIL</td>
                 </tr>
             </table>
             <p>Example simple fly script:</p>
             <div class="code" id="player-example-1"></div>
         </div>
         <div id="world">
-            <h1>world</h1>
+            <h1>World</h1>
             <table>
                 <tr>
                     <th>function name</th>
@@ -161,7 +179,7 @@
                     <td>world.set_timer()</td>
                     <td>set minecraft timer speed</td>
                     <td>timer_speed (double)</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>world.get_timer()</td>
@@ -204,7 +222,7 @@
             <div class="code" id="world-example-1"></div>
         </div>
         <div id="module-manager">
-            <h1>module manager</h1>
+            <h1>Module manager</h1>
             <table>
                 <tr>
                     <th>function name</th>
@@ -216,7 +234,7 @@
                     <td>register</td>
                     <td>register a module</td>
                     <td>module_name (string), module</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>is_enabled</td>
@@ -227,7 +245,7 @@
             </table>
         </div>
         <div id="client">
-            <h1>client</h1>
+            <h1>Client</h1>
             <table>
                 <tr>
                     <th>function name</th>
@@ -239,9 +257,75 @@
                     <td>client.print()</td>
                     <td>send client message</td>
                     <td>message (string)</td>
-                    <td>none</td>
+                    <td>NIL</td>
                 </tr>
             </table>
+        </div>
+        <div id="rendering">
+            <h1>Rendering</h1>
+            <table>
+                <tr>
+                    <th>function name</th>
+                    <th>description</th>
+                    <th>arguments</th>
+                    <th>return type</th>
+                </tr>
+                <tr>
+                    <td>rendering.get_font()</td>
+                    <td>get a font by name (returns NIL if found doesn't exist)</td>
+                    <td>font_name (string)</td>
+                    <td>Font or NIL</td>
+                </tr>
+                <tr>
+                    <td>rendering.text()</td>
+                    <td>draw text on screen</td>
+                    <td>Font, text (string), x, y, scale (doubles), color (int)</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td>rendering.rect()</td>
+                    <td>draw rect on screen</td>
+                    <td>x, y, width, height (doubles),<br>radius_top_left (double),<br>radius_top_right (double),<br>radius_bottom_right (double),<br>radius_bottom_left (double),<br>softness (double), color (int)</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td>rendering.rgba_to_int()</td>
+                    <td>convert 4 separate values to 1 integer</td>
+                    <td>r, g, b, a (ints)</td>
+                    <td>color (int)</td>
+                </tr>
+            </table>
+            <p>rendering.text() and rendering.rect() cannot be called outside the on_render event</p>
+            <p>color format is 32-bit ARGB (8 bits for each channel)</p>
+            <p>example script that draws "bivir" on screen:</p>
+            <div class="code" id="rendering-example-1"></div>
+            <p>supported fonts: arial, borel, comfortaa, consolas, esp, goldbill, jello, montserrat, museoSans, openSans, productSans, productSansBold, productSansMedium, roboto, rubik, rubikBold, segoeUI, tahoma, tahomaBold, verdana</p>
+            <h4>font preview</h4>
+            <div class="font-preview">
+                <select onchange="document.getElementById('font-preview').style.fontFamily=this.options[this.selectedIndex].text">
+                    <option value="arial">arial</option>
+                    <option value="borel">borel</option>
+                    <option value="comfortaa">comfortaa</option>
+                    <option value="consolas">consolas</option>
+                    <option value="esp">esp</option>
+                    <option value="goldbill">goldbill</option>
+                    <option value="jello">jello</option>
+                    <option value="montserrat">montserrat</option>
+                    <option value="museoSans">museoSans</option>
+                    <option value="openSans">openSans</option>
+                    <option value="productSans">productSans</option>
+                    <option value="productSansBold">productSansBold</option>
+                    <option value="productSansMedium">productSansMedium</option>
+                    <option value="roboto">roboto</option>
+                    <option value="rubik">rubik</option>
+                    <option value="rubikBold">rubikBold</option>
+                    <option value="segoeUI">segoeUI</option>
+                    <option value="tahoma">tahoma</option>
+                    <option value="tahomaBold">tahomaBold</option>
+                    <option value="verdana">verdana</option>
+                </select>
+                <p id="font-preview">qwertyuiopasdfghjklzxcvbnm</p>
+            </div>
         </div>
     </div>
 
@@ -255,6 +339,7 @@
             <a href="#world">world</a>
             <a href="#module-manager">module manager</a>
             <a href="#client">client</a>
+            <a href="#rendering">rendering</a>
         </div>
     </div>
 
