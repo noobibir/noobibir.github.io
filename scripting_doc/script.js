@@ -65,7 +65,7 @@ function autoGenerateCodeStyle(div, code) {
                         html += `<code>&ensp;</code>`;
                     }
                     else {
-                        html += `<code>${char}</code>`;
+                        html += `<code class="df">${char}</code>`;
                     }
                 } else {
                     html += `<code class="op">${char}</code>`;

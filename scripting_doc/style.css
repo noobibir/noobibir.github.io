@@ -1,5 +1,5 @@
 .code {
-    border: 1px solid black;
+    border: 1px solid rgb(134, 134, 134);
     width: fit-content;
     height: fit-content;
     display: flex;
@@ -7,12 +7,13 @@
     gap: 5px;
     margin-top: 5px;
     margin-left: 15px;
+    background-color: rgb(17, 17, 17);
 }
 
 .code-left {
     display: block;
     width: fit-content;
-    padding: 3px;
+    padding-left: 3px;
 }
 
 .code-right {
@@ -22,7 +23,7 @@
 }
 
 .code-line {
-    display:flex;
+    display: flex;
     flex-direction: row;
     height: fit-content;
 }
@@ -35,22 +36,23 @@
 code {
     margin: 0px;
     padding: 0px;
+    font-family: productSans;
 }
 
 code.kw {
-    color: blue;
+    color: rgb(255, 70, 70);
 }
 
 code.df {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 code.lt {
-    color: purple;
+    color: rgb(241, 89, 255);
 }
 
 code.lb {
-    color: green
+    color: rgb(0, 179, 0);
 }
 
 code.fn {
@@ -58,23 +60,25 @@ code.fn {
 }
 
 code.vr {
-    color: rgb(190, 92, 0);
+    color: rgb(122, 191, 255);
 }
 
 code.op {
-    color: rgb(61, 161, 255);
+    color: rgb(255, 151, 53);
 }
 
 body {
     margin: 2px;
     display: flex;
     scroll-behavior: smooth;
+    background-color: rgb(25, 25, 25);
 }
 
 h1, h2, h4 {
     margin: 0px;
     margin-bottom: 2px;
-    font-family: sans-serif;;
+    font-family: productSansMedium;
+    color: rgb(216, 216, 216);
 }
 
 h4 {
@@ -84,18 +88,25 @@ h4 {
 p {
     margin: 1px;
     margin-left: 10px;
-    font-family: sans-serif;
+    font-family: productSansMedium;
+    color: rgb(216, 216, 216);
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid rgb(100, 100, 100);
     border-collapse: collapse;
-    margin-left: 15px;;
+    margin-left: 15px;
 }
 
 td {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+th, td {
+    color: rgb(216, 216, 216);
+    font-family: productSansMedium;
+    font-size: 16;
 }
 
 .navigation {
@@ -114,6 +125,21 @@ td {
     flex-direction: column;
 }
 
+.dropdown a {
+    color: rgb(200, 200, 200);
+    text-decoration-style: none;
+    text-decoration-line: none;
+}
+
 .doc {
     margin-bottom: 20px;
+}
+
+#font-select {
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+#font-select:focus {
+    outline: none;
 }
