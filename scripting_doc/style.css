@@ -113,3 +113,7 @@ td {
     display: flex;
     flex-direction: column;
 }
+
+.doc {
+    margin-bottom: 20px;
+}

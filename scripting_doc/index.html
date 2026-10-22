@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bibir nextgen script api documentation</title>
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -106,7 +107,7 @@
                     <td>player.message()</td>
                     <td>send message to chat (supports sending minecraft and client commands)</td>
                     <td>text (string)</td>
-                    <td>NILL</td>
+                    <td>NIL</td>
                 </tr>
                 <tr>
                     <td>player.left_click()</td>
@@ -152,14 +153,14 @@
                 </tr>
                 <tr>
                     <td>player.get_selected_slot()</td>
-                    <td>get selected slot (not silent)</td>
+                    <td>get server-side selected slot</td>
                     <td>none</td>
                     <td>slot (int)</td>
                 </tr>
                 <tr>
                     <td>player.get_slot()</td>
-                    <td>get item in selected slot (returns NIL if empty)</td>
-                    <td>none</td>
+                    <td>get item in slot (supports inventory slots) (returns NIL if empty)</td>
+                    <td>slot (int)</td>
                     <td>item or NIL</td>
                 </tr>
             </table>
@@ -231,13 +232,13 @@
                     <th>return type</th>
                 </tr>
                 <tr>
-                    <td>register</td>
+                    <td>module_manager.register()</td>
                     <td>register a module</td>
                     <td>module_name (string), module</td>
                     <td>NIL</td>
                 </tr>
                 <tr>
-                    <td>is_enabled</td>
+                    <td>module_manager.is_enabled()</td>
                     <td>is module enabled</td>
                     <td>module_name (string)</td>
                     <td>is_enabled (bool)</td>
@@ -302,7 +303,7 @@
             <p>supported fonts: arial, borel, comfortaa, consolas, esp, goldbill, jello, montserrat, museoSans, openSans, productSans, productSansBold, productSansMedium, roboto, rubik, rubikBold, segoeUI, tahoma, tahomaBold, verdana</p>
             <h4>font preview</h4>
             <div class="font-preview">
-                <select onchange="document.getElementById('font-preview').style.fontFamily=this.options[this.selectedIndex].text">
+                <select id="font-select">
                     <option value="arial">arial</option>
                     <option value="borel">borel</option>
                     <option value="comfortaa">comfortaa</option>

@@ -171,3 +171,9 @@ autoGenerateCodeStyle(document.getElementById("rendering-example-1"),
   end
 }
 module_manager.register("bivirText", m)`);
+
+const fontSelector = document.getElementById("font-select");
+const fontPreview = document.getElementById('font-preview');
+fontSelector.onchange = () => {
+    fontPreview.style.fontFamily = fontSelector.options[fontSelector.selectedIndex].text;
+}
