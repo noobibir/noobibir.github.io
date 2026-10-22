@@ -108,3 +108,8 @@ td {
     margin-left: 10px;
     display: flex;
 }
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+}
