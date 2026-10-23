@@ -1,8 +1,23 @@
 function isDec(x) {
     for (var char of x) {
-        if (char != "0" && char != "1" && char != "2" && char != "3" && char != "4" && char != "5" && char != "6"
-            && char != "7" && char != "8" && char != "9"
-        ) {
+        var charCode = char.charCodeAt(0);
+        if (charCode < 48 || charCode > 57) {
+            return false
+        }
+    }
+    return true;
+}
+
+function isHex(x) {
+    if (x.length < 3) {
+        return false;
+    }
+
+    if (x[0] != "0" || x[1] != "x") return false;
+    for (var char of x.slice(2, x.length)) {
+        char = char.toLowerCase();
+        var charCode = char.charCodeAt(0);
+        if ((charCode < 48 || charCode > 57) && (charCode < 97 || charCode > 102)) {
             return false
         }
     }
@@ -11,9 +26,9 @@ function isDec(x) {
 
 function autoGenerateCodeStyle(div, code) {
     const keywords = [ "and", "end", "in", "repeat", "break", "false", "local", "return", "do", "for", "nil", "then", "else", "function", "not", "true", "elseif", "if", "or", "until", "while" ];;
-    const libs = [ "world", "module_manager", "player", "client" ];
-    const opers = [ "=", ">", "<", "+", "-", "*", "/", "(", ")", "{", "}", "[", "]", "%", "^", "#", "~" ];
-    const bufBreak = [ ".", " ", "\t", ",", `"` ];
+    const libs = [ "world", "module_manager", "player", "client", "rendering" ];
+    const opers = [ "=", ">", "<", "+", "-", "*", "/", "%", "^", "#", "~" ];
+    const bufBreak = [ ".", " ", "\t", ",", `"`, "(", ")", "{", "}", "[", "]" ];
 
     var html = "";
     html += `<div class="code-left">`;
@@ -30,7 +45,7 @@ function autoGenerateCodeStyle(div, code) {
                     if (isString) {
                         html += `<code class="lt">${buff}</code>`;
                     }
-                    else if (isDec(buff)) {
+                    else if (isDec(buff) || isHex(buff)) {
                         if (char == ".") {
                             html += `<code class="lt">${buff}.</code>`;
                             buff = "";
@@ -49,7 +64,7 @@ function autoGenerateCodeStyle(div, code) {
                         html += `<code class="fn">${buff}</code>`;
                     }
                     else {
-                        html += `<code class="vr">${buff}</code>`
+                        html += `<code class="vr">${buff}</code>`;
                     }
                     buff = "";
                 }
