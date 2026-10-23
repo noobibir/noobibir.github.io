@@ -14,7 +14,6 @@
             <p>Bibir script api allows you to add new modules or add new features to some already existing ones</p>
             <p>Scripts are written in lua programming language</p>
             <p>All script files should be in &ltMC folder&gt/bibir/scripts</p>
-            <p>All scripts are in "scripts" category in ClickGUI</p>
         </div>
         <div id="creating-a-script">
             <h1>Creating a script</h1>
@@ -56,9 +55,14 @@
                     <td>none</td>
                 </tr>
                 <tr>
-                    <td>on_render</td>
-                    <td>called before rendering minecraft vanilla hud</td>
-                    <td>none</td>
+                    <td>on_render2d</td>
+                    <td>called before rendering hud</td>
+                    <td>partial ticks (double)</td>
+                </tr>
+                <tr>
+                    <td>on_render3d</td>
+                    <td>called before rendering world</td>
+                    <td>partial ticks (double)</td>
                 </tr>
                 <tr>
                     <td>on_key</td>
@@ -274,7 +278,7 @@
                 </tr>
                 <tr>
                     <td>rendering.get_font()</td>
-                    <td>get a font by name (returns NIL if found doesn't exist)</td>
+                    <td>get a font by name (returns NIL if font doesn't exist)</td>
                     <td>font_name (string)</td>
                     <td>Font or NIL</td>
                 </tr>
@@ -296,8 +300,21 @@
                     <td>r, g, b, a (ints)</td>
                     <td>color (int)</td>
                 </tr>
+                <tr>
+                    <td>rendering.box()</td>
+                    <td>draw a filled box in world</td>
+                    <td>x1, y1, z1, x2, y2, z2 (doubles), color (int)</td>
+                    <td>NIL</td>
+                </tr>
+                <tr>
+                    <td>rendering.box_edges()</td>
+                    <td>draw only the box edges in world</td>
+                    <td>x1, y1, z1, x2, y2, z2 (doubles),<br>color (int), edge_width (float)</td>
+                    <td>NIL</td>
+                </tr>
             </table>
-            <p>rendering.text() and rendering.rect() cannot be called outside the on_render event</p>
+            <p>rendering.text() and rendering.rect() cannot be called outside the on_render2d event</p>
+            <p>rendering.box() and rendering.box_edges() cannot be called outside the on_render3d event</p>
             <p>color format is 32-bit ARGB (8 bits for each channel)</p>
             <p>example script that draws "bivir" on screen:</p>
             <div class="code" id="rendering-example-1"></div>
