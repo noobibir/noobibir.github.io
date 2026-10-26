@@ -78,7 +78,14 @@ h1, h2, h4 {
     margin: 0px;
     margin-bottom: 2px;
     font-family: productSansMedium;
+}
+
+h2, h4 {
     color: rgb(216, 216, 216);
+}
+
+h1 {
+    color: white;
 }
 
 h4 {
@@ -104,9 +111,19 @@ td {
 }
 
 th, td {
-    color: rgb(216, 216, 216);
     font-family: productSansMedium;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
     font-size: 16;
+}
+
+td {
+    color: rgb(216, 216, 216);
+}
+
+th {
+    color: white;
 }
 
 .navigation {
@@ -126,7 +143,7 @@ th, td {
 }
 
 .dropdown a {
-    color: rgb(200, 200, 200);
+    color: rgb(92, 168, 255);
     text-decoration-style: none;
     text-decoration-line: none;
 }
