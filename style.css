@@ -1,6 +1,7 @@
 html {
     height: 100%;
 }
+
 body {
     margin: 0px;
     width: 100%;
@@ -8,35 +9,161 @@ body {
     height: 100%;
     color: rgb(30, 30, 30);
     background-color: rgb(30, 30, 30);
-    justify-content: center;
-    text-align: center;
+    display: flex;
 }
 
-h1 {
-    margin-top: 0px;
-    margin-bottom: 0px;
+.bg {
+    position: absolute;
+    background-image: url("/assets/background pattern.png");
+    background-size: 100px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.header {
+    width: 100%;
+    height: 5%;
+    background-color: rgba(0, 0, 0, 0.199);
+    position: fixed;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.header-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.header img {
+    height: 100%;
+    display: inline-block;
+}
+
+.header h1 {
     color: white;
-    font-size: 100px;
-}
-
-span {
-    color: white;
-}
-
-.discord {
-    display: inline;
-    width: 32px;
-    height: 32px;
-}
-
-.youtube {
-    display: inline;
-    width: 40px;
-    height: 32px;
-}
-
-.kingivir {
-    width: 256px;
-    height: 256px;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0px;
+}
+
+.button-selected {
+    border: 0px;
+    color: white;
+    background-color: rgb(77, 135, 243);
+    height: 80%;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
+.button-other {
+    border: 0px;
+    color: white;
+    background-color: rgb(49, 49, 49);
+    height: 80%;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+}
+
+.button-other:hover {
+    background-color: rgb(60, 60, 60);
+    cursor: pointer;
+}
+
+.main {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.desc {
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.desc img {
+    width: 512px;
+    height: 288px;
+    border-radius: 10px;
+}
+
+.desc-inner {
+    margin-right: 10%;
+}
+
+.big-span {
+    color: white;
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 64px;
+    display: inline;
+    font-weight: bold;
+}
+
+.desc-bibir {
+    color: rgb(77, 135, 243);
+}
+
+.desc-bibir:hover {
+    cursor: pointer;
+}
+
+.small-span {
+    color: rgb(199, 199, 199);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+}
+
+.desc-button-download {
+    margin-top: 5px;
+    border: 0px;
+    color: white;
+    background-color: rgb(77, 135, 243);
+    height: 80%;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    transition-duration: 0.5s;
+}
+
+.desc-button-download:hover {
+    cursor: pointer;
+    background-color: rgb(69, 109, 182);
+    transition-duration: 0.5s;
+}
+
+.desc-button-discord {
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 1px solid rgb(148, 148, 148);
+    color: white;
+    background-color: rgb(49, 49, 49);
+    height: 80%;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    transition-duration: 0.5s;
+}
+
+.desc-button-discord:hover {
+    cursor: pointer;
+    border: 1px solid rgb(75, 75, 75);
+    transition-duration: 0.5s;
 }

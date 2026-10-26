@@ -7,15 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>bibir client</h1>
-    <img src="kingivir.webp" class="kingivir">
-    <div>
-        <a href="https://discord.gg/nknexbgUuq">
-            <img src="discord.png" class="discord">
-        </a>
-        <a href="https://www.youtube.com/@NoobMinecraftPlayer">
-            <img src="youtube.png" class="youtube">
-        </a>
+    <div class="header">
+        <div class="header-inner">
+            <img src="/assets/kingivir.webp">
+            <h1>bibir client</h1>
+            <button class="button-selected">Home</button>
+            <!-- <button class="button-other">Buy</button> -->
+            <button class="button-other" onclick="window.location.href='/scripting_doc'">Documentation</button>
+            <button class="button-other" onclick="window.location.href='https://discord.gg/nknexbgUuq'">Discord</button>
+            <button class="button-other" onclick="window.location.href='https://www.youtube.com/@NoobMinecraftPlayer'">Youtube</button>
+        </div>
+    </div>
+    <div class="bg"></div>
+    <div class="main">
+        <div class="desc">
+            <div class="desc-inner">
+                <span class="big-span">Welcome to </span>
+                <span onclick="var audio = new Audio('/assets/welcome_to_bibir.ogg'); audio.play()" class="desc-bibir big-span">bibir</span>
+                <br>
+                <span class="small-span">A Fabric minecraft client, always updated to the latest minecraft version
+                    <br>with very customizable visuals and good bypasses</span>
+                <br>
+                <button class="desc-button-download">Download</button>
+                <button class="desc-button-discord" onclick="window.location.href='https://discord.gg/nknexbgUuq'">Join the discord</button>
+            </div>
+            <img src="/assets/logo.png" alt="">
+        </div>
     </div>
 </body>
 </html>
